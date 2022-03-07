@@ -1,0 +1,37 @@
+import React from "react";
+import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import AppButton from "./shared/AppButton";
+import CustomText from "./CustomText";
+
+export default function LandingScreen() {
+  return (
+    <ImageBackground
+      blurRadius={10}
+      style={styles.background}
+      source={require("../assets/11.jpg")}
+    >
+      <View style={styles.textContainer}>
+        <CustomText>Hello Welcome to Task Manager</CustomText>
+      </View>
+      <AppButton title="Login" onPress={() => console.log("Login button")} />
+      <AppButton
+        title="Register"
+        color="secondary"
+        onPress={() => console.log("Register button")}
+      />
+    </ImageBackground>
+  );
+}
+
+const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
+  textContainer: {
+    position: "absolute",
+    top: 70,
+    alignItems: "center",
+  },
+});
